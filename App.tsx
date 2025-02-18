@@ -1,5 +1,14 @@
 //1. import core component react-native
-import {Text, View, StyleSheet, Image, ScrollView} from 'react-native';
+import Reach from 'react';
+import {
+  Text,
+  View,
+  StyleSheet,
+  Image,
+  ScrollView,
+  TextInput,
+  TouchableOpacity,
+} from 'react-native';
 //2. Buat component
 //   component adalah function yg return jsx
 const App = () => {
@@ -9,11 +18,19 @@ const App = () => {
       <View style={styles.container}>
         <Text style={styles.title}>Basic React Native</Text>
       </View>
+
       <ScrollView showsVerticalScrollIndicator={false}>
-        <Text style={styles.subTitle}>Image From URI</Text>
+        <TextInput style={styles.input} placeholder="Enter your Email" />
+        <TextInput style={styles.input} placeholder="Password" />
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Submit</Text>
+        </TouchableOpacity>
+        <Text style={styles.subTitle}>semangka</Text>
         <Image
           style={styles.img1}
-          source={{uri: 'https://reactnative.dev/img/tiny_logo.png'}}
+          source={{
+            uri: 'https://4kwallpapers.com/images/walls/thumbs_2t/12958.png',
+          }}
         />
         <Text style={styles.subTitle}>Image From Local Directory</Text>
         <Image style={styles.img2} source={require('./assets/neo.png')} />
@@ -34,7 +51,7 @@ export default App;
 //4. Styling
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'red',
+    backgroundColor: 'black',
     borderColor: 'black',
     borderWidth: 5,
     padding: 20,
@@ -59,8 +76,30 @@ const styles = StyleSheet.create({
     marginLeft: 20,
   },
   img2: {
-    marginLeft: 20,
-    height: 233 / 3,
-    width: 1024 / 3,
+    marginLeft: 30,
+    height: 533 / 3,
+    width: 924 / 3,
+  },
+
+  input: {
+    borderWidth: 2,
+    borderColor: 'black',
+    margin: 20,
+    padding: 25,
+    fontSize: 25,
+    borderRadius: 15,
+  },
+
+  button: {
+    backgroundColor: 'red',
+    margin: 20,
+    padding: 20,
+    borderRadius: 15,
+  },
+
+  buttonText: {
+    fontSize: 25,
+    textAlign: 'center',
+    color: 'white',
   },
 });
