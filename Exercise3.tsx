@@ -29,7 +29,7 @@ const LoginScreen = () => {
           <Text style={styles.inputLabel}>Username</Text>
           <TextInput
             style={styles.input}
-            placeholder="Masukan username anda"
+            placeholder="Masukan username anda."
             value={username}
             onChangeText={setUsername}
             autoCapitalize="none"
@@ -65,12 +65,13 @@ const styles = StyleSheet.create({
   },
   formContainer: {
     paddingHorizontal: 20,
-    paddingTop: 40,
+    paddingTop: 50,
   },
   title: {
     fontSize: 28,
     fontWeight: 'bold',
-    marginBottom: 30,
+    fontFamily: 'sans-serif-condensed',
+    marginBottom: 50,
     color: '#000',
   },
   inputContainer: {
