@@ -10,7 +10,7 @@ const Exercise4 = () => {
         <View style={styles.yellowSquare}></View>
         <View style={styles.blackSquare}></View>
       </View>
-
+     
       {/* Middle section with logo and text */}
       <View style={styles.content}>
         <Image

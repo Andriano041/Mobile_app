@@ -10,4 +10,4 @@ import Exercise4 from './Exercise4';
 import Flexbox from './Flexbox';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => Exercise4);
+AppRegistry.registerComponent(appName, () => Exercise3);

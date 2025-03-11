@@ -8,51 +8,33 @@ import {
   SafeAreaView,
   StatusBar,
 } from 'react-native';
+import Input from './components/Input';
+import Button from './components/Button';
+import Title from './components/Title';
 
 const LoginScreen = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const {username} = useState ('');
+  const {password} = useState ('');
+  
+  const onSubmit = () => {
+    console.log('Test')
 
-  const handleLogin = () => {
-    // Implement your login logic here
-    console.log('Login attempt with:', {username, password});
-    // You would typically make an API call here
-  };
+  }
 
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor="#f8f8f8" />
       <View style={styles.formContainer}>
-        <Text style={styles.title}>Welcome</Text>
+        <Title />
 
-        <View style={styles.inputContainer}>
-          <Text style={styles.inputLabel}>Username</Text>
-          <TextInput
-            style={styles.input}
-            placeholder="Masukan username anda."
-            value={username}
-            onChangeText={setUsername}
-            autoCapitalize="none"
-          />
-        </View>
+        <Input label="Username" placeholder={'masukkan username'} />
+        <Input label="Password" placeholder={'masukkan password'} />
 
-        <View style={styles.inputContainer}>
-          <Text style={styles.inputLabel}>Password</Text>
-          <TextInput
-            style={styles.input}
-            placeholder="Masukan password anda"
-            value={password}
-            onChangeText={setPassword}
-            secureTextEntry
-          />
-        </View>
+        <Button label="Sign in " onPress={onSubmit}  />
 
-        <TouchableOpacity
-          style={styles.button}
-          activeOpacity={0.8}
-          onPress={handleLogin}>
-          <Text style={styles.buttonText}>Sign In</Text>
-        </TouchableOpacity>
+        <Button label="Google" color="red" />
+        <Button label="Facebook" color="blue" />
+        <Button label="Apple" color="black" />
       </View>
     </SafeAreaView>
   );
@@ -72,12 +54,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontFamily: 'sans-serif-condensed',
     marginBottom: 50,
-    color: '#000',
+    color: '#7d3c98',
   },
-  inputContainer: {
-    marginBottom: 20,
-  },
-  inputLabel: {
+
+  label: {
     fontSize: 17,
     fontWeight: 'bold',
     marginBottom: 8,
@@ -94,9 +74,9 @@ const styles = StyleSheet.create({
     color: '#333',
   },
   button: {
-    backgroundColor: 'blue',
+    backgroundColor: 'red',
     height: 50,
-    borderRadius: 8,
+    borderRadius: 20,
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 20,
