@@ -13,13 +13,12 @@ import Button from './components/Button';
 import Title from './components/Title';
 
 const LoginScreen = () => {
-  const {username} = useState ('');
-  const {password} = useState ('');
-  
-  const onSubmit = () => {
-    console.log('Test')
+  const {username} = useState('');
+  const {password} = useState('');
 
-  }
+  const onSubmit = () => {
+    console.log('Test');
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -30,7 +29,7 @@ const LoginScreen = () => {
         <Input label="Username" placeholder={'masukkan username'} />
         <Input label="Password" placeholder={'masukkan password'} />
 
-        <Button label="Sign in " onPress={onSubmit}  />
+        <Button label="Sign in " onPress={onSubmit} />
 
         <Button label="Google" color="red" />
         <Button label="Facebook" color="blue" />
